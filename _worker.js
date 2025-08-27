@@ -1,4 +1,4 @@
-// worker.js
+// _worker.js
 /**
  * This is a complete Cloudflare Worker script that acts as a flexible
  * external options provider for Lark Approval.
@@ -6,19 +6,12 @@
  * It connects to your Lark Base and retrieves data from a specified field,
  * formatting it according to the Lark API documentation.
  *
- * How to deploy this worker:
- * 1. Go to your Cloudflare dashboard and navigate to the "Workers & Pages" section.
- * 2. Create a new Worker.
- * 3. Copy and paste the entire code from this file into the Worker's script editor.
- * 4. In the Worker's "Settings" tab, go to "Variables" and add the following
- * environment variables:
- *
- * - LARK_APP_ID: Your Lark app ID.
- * - LARK_APP_SECRET: Your Lark app secret.
- * - LARK_AUTH_TOKEN: A secret token you define for authentication (e.g., "my-secret-token-123").
- *
- * 5. Save and deploy the Worker.
- * 6. Use the Worker's public URL in your Lark Approval form's external options settings.
+ * How to deploy this worker with GitHub and Cloudflare Pages:
+ * 1. Push this file as `_worker.js` to the root of your GitHub repository.
+ * 2. Connect the repository to a new Cloudflare Pages project.
+ * 3. Add your `LARK_APP_ID`, `LARK_APP_SECRET`, and `LARK_AUTH_TOKEN`
+ * as environment variables in the Cloudflare Pages dashboard.
+ * 4. Use the project's Pages URL in your Lark Approval form.
  */
 
 // Global variable to cache the Lark access token
